@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-background: #ffffff;
+  --dark-background: #2c3e50;
+  --accent-color: #3498db;
+  --hover-accent: #2980b9;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --transition-speed: 0.3s;
+}
+
+body {
+  background-color: var(--dark-background);
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  color: var(--light-background);
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: var(--accent-color);
+  text-shadow: 1px 1px 2px var(--shadow-color);
+  transition: color var(--transition-speed);
+}
+
+h1:hover {
+  color: var(--light-background);
+}
+
+.input-container {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.convert-btn {
+  background-color: var(--accent-color);
+  color: var(--light-background);
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.convert-btn:hover {
+  background-color: var(--hover-accent);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.number-input {
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid var(--light-background);
+  padding: 5px;
+  background-color: var(--light-background);
+  color: var(--dark-background);
+  transition: border-color var(--transition-speed);
+}
+
+.number-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+#result {
+  margin: 10px 0;
+  min-width: 200px;
+  width: fit-content;
+  min-height: 80px;
+  word-break: break-word;
+  padding: 15px;
+  border: 5px solid var(--accent-color);
+  font-size: 2rem;
+  text-align: center;
+  background-color: var(--light-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  color: var(--dark-background);
+  transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+#result:hover {
+  transform: scale(1.05);
+  background-color: var(--dark-background);
+  color: var(--accent-color);
+}
+
+#animation-container {
+  margin: auto;
+  max-width: 300px;
+}
+
+.animation-frame {
+  margin: 20px auto;
+  padding: 15px 10px;
+  border: 5px solid var(--accent-color);
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 10px;
+  background-color: var(--light-background);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.animation-frame:hover {
+  background-color: var(--dark-background);
+  color: var(--accent-color);
+  transform: translateY(-10px);
+}
+
+@media screen and (min-width: 500px) {
+  .input-container {
+    flex-direction: row;
+  }
+
+  #result {
+    max-width: 460px;
+  }
+}
